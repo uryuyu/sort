@@ -38,7 +38,7 @@ int quick_select(int A[], int n, int k){
 
 int main(){
   int i;
-  A[0] = 0;
+    A[0] = 0;
   A[1] = 17; //原始元
   for(i=2;i<N;i++){
     A[i] = (long long int) A[i-1] * A[1] % N;

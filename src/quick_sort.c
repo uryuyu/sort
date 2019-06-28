@@ -25,12 +25,12 @@ void quick_sort(int A[],int n){
     A[n/2] = A[0];
     A[0] = pivot;
     for(i = j = 1; i < n; i++){
-        if(A[i] <= pivot){
+        if(A[i] < pivot){
             swap(A+i,A+j);
             j ++;
         }
     }
-        return quick_sort(A+j, n-j),quick_sort(A, j);
+        return quick_sort(A, j),quick_sort(A+j, n-j);
     }
     
 }
