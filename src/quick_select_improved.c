@@ -31,7 +31,7 @@ int quick_select(int A[], int n, int k){
       j++;
       m++;
     }
-    else if(A[i] == pivot){
+    else if(A[m] == pivot){
         swap(A+m,A+l);
             l--;
         }
@@ -49,13 +49,13 @@ int main(){
   A[0] = 0;
   A[1] = 17; //原始元
   for(i=2;i<N;i++){
- A[i] = (long long int) A[i-1] * A[1] % N;
+ A[i] = (long long int) A[i-1] * A[0] % N;
   }
 
 // すべての要素が同じ場合でも計算が早く終わるか確認する
 
   for(i=0;i<N;i++){
-    //if(quick_select(A, N, i) != i) printf("ERROR %d %d\n", i, quick_select(A, N, i));
+  //  if(quick_select(A, N, i) != i) printf("ERROR %d %d\n", i, quick_select(A, N, i));
     printf("%d th element is %d\n", i, quick_select(A, N, i));
   }
 }

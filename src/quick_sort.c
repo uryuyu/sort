@@ -30,7 +30,8 @@ void quick_sort(int A[],int n){
             j ++;
         }
     }
-        return quick_sort(A, j),quick_sort(A+j, n-j);
+        swap(A+0,A+(j-1));
+        return quick_sort(A, j-1),quick_sort(A+j, n-j);
     }
     
 }
@@ -47,6 +48,6 @@ int main(){
 
   quick_sort(A, N);
   for(i=0;i<N;i++){
-    if(A[i] != i) printf("ERROR %dth element is %d\n", i, A[i]);
+   if(A[i] != i)printf("ERROR %dth element is %d\n", i, A[i]);
   }
 }
